@@ -9,7 +9,7 @@ wn.tracer(0)
 
 # Score
 score_a = 0
-sore_b = 0
+score_b = 0
 
 # Paddle A
 paddle_a = turtle.Turtle()
@@ -36,8 +36,8 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 1
-ball.dy = 1
+ball.dx = 0.8
+ball.dy = 0.8
 
 # Pen for scoring
 pen = turtle.Turtle()
@@ -97,12 +97,14 @@ while True:
         ball.goto(0, 0)
         ball.dx *= -1
         score_a += 1
+        pen.clear()
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align = "center", font = ("Courier", 24, "normal"))
 
     if ball.xcor() < -390:
         ball.goto(0, 0)
         ball.dx *= -1
         score_b += 1
+        pen.clear()
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align = "center", font = ("Courier", 24, "normal"))
 
 
